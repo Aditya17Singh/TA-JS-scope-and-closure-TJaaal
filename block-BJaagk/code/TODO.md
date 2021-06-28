@@ -8,6 +8,16 @@ function percentage(marks, total) {
 let marks = function percentage(marks, total) {
   return (marks * 100) / total;
 }
+
+let marks = function(marks, total) {
+  return (marks * 100) / total;
+}
+
+let marks = (marks, total) => {
+  return (marks * 100) / total;
+}
+
+let marks = (marks, total) => (marks * 100) / total;
 ```
 
 2. Write Function Declaration or Function Expression next to the function.
@@ -16,30 +26,36 @@ let marks = function percentage(marks, total) {
 function percentage(marks, total) {
   return (marks * 100) / total;
 }
-percentage(20,500)
+//FUNCTION DECLARATION
 ```
 
 ```js
 let percentage = function percentage(marks, total) {
   return (marks * 100) / total;
 };
-Function Expression
+//Function Expression
 ```
 
 ```js
 let percentage = function (marks, total) {
   return (marks * 100) / total;
 };
+//Function Expression
+
 ```
 
 ```js
 let percentage = (marks, total) => {
   return (marks * 100) / total;
 };
+//Function Expression
+
 ```
 
 ```js
 let percentage = (marks, total) => (marks * 100) / total;
+//Function Expression
+
 ```
 
 3. Why is a function definition an expression in JavaScript? Give one example of function expression.
@@ -67,8 +83,12 @@ five = function () {
 ```
 
 6. What is the difference between function definition and function call? Explain with an example.
-
+function defination is when you define a function
+and function call is calling a function followed by parenthesis.
 7. What is the similarities between function definition and function call?
+
+function defination is an expression(function is an object)
+function call is an expression(function call return a value)
 
 8. Is the code below valid or invalid. Explain with reason.
 

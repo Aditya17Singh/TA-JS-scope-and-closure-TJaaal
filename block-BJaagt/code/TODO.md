@@ -1,0 +1,100 @@
+Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
+
+Example:
+
+```js
+function hello() {
+  var username = 'Arya';
+}
+console.log(useranme); // output
+```
+
+In above code we are looking for the variable named `usename`. There is no variable named `username` in the global scope. The variable is inside the function named `hello` and we can't access the variable defined inside a function from outside.
+
+The above code will throw an error `Reference Error username is not defined`.
+
+2. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
+
+```js
+{
+  const username = 'Arya';
+}
+console.log(useranme); //Reference Error username is not defined
+```
+In above code we are looking for the variable named `username`. There is no variable named `username` in the global scope. The variable is inside the block named `hello` and we can't access the variable defined inside a block from outside.
+
+The above code will throw an error `Reference Error username is not defined`.
+
+
+3. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
+
+```js
+if (true) {
+  let username = 'Arya';
+}
+console.log(useranme); // Reference Error username is not defined
+```
+you cannot access from outside
+
+
+4. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
+
+```js
+if (true) {
+  var username = 'Arya';
+}
+console.log(useranme); // Arya
+```
+you can access from outside because of var.It doesnot create scope.
+
+5. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
+
+```js
+let username = 'John';
+if (true) {
+  var username = 'Arya';
+}
+console.log(useranme); // Error already declared
+```
+username  already declared.Two username in the same scope.
+
+6. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
+
+```js
+let username = 'John';
+if (true) {
+  let username = 'Arya';
+}
+console.log(useranme); // John
+```
+Let create scope so John isin global scope.
+ 
+7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
+
+```js
+let username = 'John';
+function sayHello() {
+  let username = 'Arya';
+}
+sayHello();
+console.log(useranme); // John
+```
+
+8. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
+
+```js
+for (var i = 0; i < 10; i++) {
+  console.log(i, 'First'); // output
+}
+console.log(i, 'Second'); // output
+```
+var creates a block scope.
+9. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
+
+```js
+for (let i = 0; i < 10; i++) {
+  console.log(i, 'First'); // output
+}
+console.log(i, 'Second'); // output
+```
+let is create scope thats why we see value of first in console.

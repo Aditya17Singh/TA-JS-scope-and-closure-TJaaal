@@ -45,7 +45,7 @@ if (true) {
 }
 console.log(useranme); // Arya
 ```
-you can access from outside because of var.
+you can access from outside because of var.It doesnot create scope.
 
 5. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -56,7 +56,7 @@ if (true) {
 }
 console.log(useranme); // Error already declared
 ```
-username  already declared.
+username  already declared.Two username in the same scope.
 
 6. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -67,7 +67,8 @@ if (true) {
 }
 console.log(useranme); // John
 ```
-
+Let create scope so John isin global scope.
+ 
 7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
@@ -87,7 +88,7 @@ for (var i = 0; i < 10; i++) {
 }
 console.log(i, 'Second'); // output
 ```
-
+var creates a block scope.
 9. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
@@ -96,3 +97,4 @@ for (let i = 0; i < 10; i++) {
 }
 console.log(i, 'Second'); // output
 ```
+let is create scope thats why we see value of first in console.

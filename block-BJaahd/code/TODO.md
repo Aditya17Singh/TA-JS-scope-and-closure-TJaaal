@@ -46,6 +46,7 @@ function makeCounter() {
       changeBy(-1);
     },
 
+
     value: function() {
       return privateCounter;
     }

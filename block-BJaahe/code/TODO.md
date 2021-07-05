@@ -15,10 +15,18 @@ let out = outer();
 2. Write a function `delay` that accepts two arguments, a callback and the wait for the time in milliseconds (1000 ms is 1 second). `delay` should return a function that, when invoked waits for the specified amount of time before executing. (Use setTimeout)
 
 ```js
-function delay(time,cb){
-  return setTimeout(function(){alert(cb());},3000)
+// function delay(time,cb){
+//   return setTimeout(function(){alert(cb());},3000)
+// }
+// let time = delay()
+
+function delay(cb,ms){
+  return function(){
+    setTimeout(cb,ms)
+  }
 }
-let time = delay()
+let time = delay(() => alert("hello"), 2000);
+time()
 ```
 
 3. Write a function with a closure. The first function should only take one argument, someone's last name, and return the inner function. The returned `inner` function should take one more argument, someone's first name. When inner function when called it should console.log both the first name and the last name with a space.
@@ -175,10 +183,10 @@ arya.setLastName('Lannister'); // "Jon Lannister"
 The returned function accepts a string (children) and returns the children with the tag you passed.
 
 ```js
-function createTag(HTML) {
+function createTag(tag) {
    function string(children){
-      let htm = document.querySelector(HTML)
-      htm.append(children)
+      let htm = document.createElement(tag)
+      htm.innerText = children
       return htm
    }
    return string

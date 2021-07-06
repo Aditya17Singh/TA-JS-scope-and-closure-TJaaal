@@ -361,6 +361,8 @@ let allFunctions = [
   multiplyThree,
   half,
 ];
-
+allFunctions.reduce((acc,cv) => {
+  console.log(cv)
+},0)
 // Answer is: 447
 ```

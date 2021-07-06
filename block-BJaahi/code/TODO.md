@@ -64,7 +64,23 @@ var nextMessage = sayHello('Test');
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//Declaration Phase
+var userName = undefined;
+let number;
+
+function sayHello(name) {
+  return `Hello ${name}`;
+}
+let message;
+var nextMessage = undefined;
+
+//Execution Phase
+console.log(username, numbers);
+userName = 'Arya';
+number = 21;
+message = sayHello(username);
+nextMessage = sayHello('Test');
+
 ```
 
 3.
@@ -85,7 +101,23 @@ var nextMessage = sayHello('Test');
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//Declaration Phase
+let userName ;
+let number;
+let sayHello;
+let message;
+var nextMessage = undefined;
+
+//Execution Phase
+console.log(username, numbers);
+userName = 'Arya'
+number = 21;
+sayHello = function (name) {
+  return `Hello ${name}`;
+};
+message = sayHello(username);
+nextMessage = sayHello('Test');
+
 ```
 
 4.
@@ -122,7 +154,15 @@ let age = 21;
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//Declaration Phase
+var name = undefined;
+let age ;
+
+//Execution Phase
+console.log(name);
+console.log(age);
+name = 'Lydia';
+age = 21;
 ```
 
 6.
@@ -192,7 +232,16 @@ let num2 = 30;
 <!-- Answer -->
 
 ```js
-// Your code goes here
+// Declaration Phase
+let num1;
+var sum = undefined;
+let num2;
+
+//Execution Phase
+num1 = 21;
+console.log(sum);
+sum = num1 + num2;
+num2 = 30;
 ```
 
 10.
@@ -237,7 +286,16 @@ let add = (a, b) => {
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//Declaration Phase
+function test(a) {
+  let num1 = 21;
+  return add(a, num1);
+}
+let sum;
+let add;
+
+//Execution Phase
+
 ```
 
 12.
@@ -256,6 +314,7 @@ function add(a, b) {
 ```
 
 <!-- Answer -->
+121
 
 ```js
 // Your code goes here

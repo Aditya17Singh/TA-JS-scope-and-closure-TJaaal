@@ -11,10 +11,9 @@
 
 ```js
 function loop (sv,tf,uf,fb){
-  for(let i = sv; i<= tf(i); i = uf(i)){
+  for(let i = sv;  tf(i); i = uf(i)){
     fb(i)
   }
-
 }
 
 loop(
@@ -50,9 +49,9 @@ function intersection(...arrays) {
   let first = arrays[0]
   for(let i = 1; i < arrays.length; i++){
     let second = arrays[i];
-    let final = first.filter((elm) => second.includes(elm))
-    return final;
+     first = first.filter((elm) => second.includes(elm))
   }
+  return first;
 }
 // Test
 console.log(
@@ -71,9 +70,9 @@ function union(...arrays) {
   let first = arrays[0]
   for(let i = 1; i < arrays.length; i++){
     let second = arrays[i];
-    let final = first.filter((elm) => !second.includes(elm).concat(second))
-    return final;
+    first = first.filter((elm) => !second.includes(elm)).concat(second)
   }
+  return first;
 }
 
 // Test

@@ -15,7 +15,7 @@ console.log(
   window.knownAs
 );
 ```
-
+undefined undefined "no one"
 2. Guess the output:
 
 ```js
@@ -29,6 +29,7 @@ function fullName(a, b) {
 
 console.log(window.fullName(firstName, lastName));
 ```
+AryaStark
 
 3. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -40,23 +41,25 @@ var one = addOne(0);
 var two = addOne(1);
 console.log(one, two);
 ```
+Error
 
 4. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
 var one = addOne(0);
-fucntion addOne(num){
+function addOne(num){
   return num + 1;
 }
 var two = addOne(1);
 console.log(one, two);
 ```
+1 2
 
 5. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
 console.log(addOne(0));
-fucntion addOne(num){
+function addOne(num){
   return num + 1;
 }
 var two = addOne(1);
@@ -97,6 +100,7 @@ function isAwesome() {
 }
 isAwesome();
 ```
+undefined
 
 9. What will be the output of the following
 
@@ -110,6 +114,7 @@ function isAwesome() {
 }
 isAwesome();
 ```
+true
 
 10. What will be the output of the following
 
@@ -137,6 +142,7 @@ function fullName(a, b) {
 const name = fullName(firstName, lastName);
 console.log(name);
 ```
+AryaStark
 
 12. Guess the output of the code below with a reason.
 
@@ -157,6 +163,7 @@ if (true) {
 }
 console.log(name);
 ```
+AryaStark because var is function scoped
 
 14. Guess the output of the code below with a reason.
 
@@ -166,6 +173,7 @@ if (true) {
 }
 console.log(name);
 ```
+let is block scoped 
 
 15. Guess the output of the code below with a reason.
 

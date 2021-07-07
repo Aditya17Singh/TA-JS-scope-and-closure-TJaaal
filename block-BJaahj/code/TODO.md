@@ -3,7 +3,14 @@
 1. Construct a function `objOfMatches` that accepts two arrays and a callback. `objOfMatches` will build an object and return it. To build the object, `objOfMatches` will test each element of the first array using the callback to see if the output matches the corresponding element (by index) of the second array. If there is a match, the element from the first array becomes a key in an object, and the element from the second array becomes the corresponding value.
 
 ```js
-function objOfMatches(array1, array2, callback) {}
+function objOfMatches(array1, array2, callback) {
+return array1.reduce((acc,cv,index) => {
+  if(array2[index] === callback(cv)){
+    acc[cv] = array2[index]
+  }
+  return acc;
+},{})
+}
 
 // TEST
 console.log(
@@ -20,27 +27,35 @@ console.log(
 2. Construct a function `multiMap` that will accept two arrays: an array of values and an array of callbacks. `multiMap` will return an object whose keys match the elements in the array of values. The corresponding values that are assigned to the keys will be arrays consisting of outputs from the array of callbacks, where the input to each callback is the key.
 
 ```js
-function multiMap(arrVals, arrCallbacks) {}
-
-// TEST
-console.log(
-  multiMap(
-    ['catfood', 'glue', 'beer'],
-    [
-      function (str) {
-        return str.toUpperCase();
-      },
-      function (str) {
-        return (
-          str[0].toUpperCase() + str.slice(1).toLowerCase()
-        );
-      },
-      function (str) {
-        return str + str;
-      },
-    ]
-  )
-); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
+  function multiMap(arrVals, arrCallbacks) {
+    return arrVals.reduce((acc,cv) => {
+     let call = arrCallbacks.reduce((acc1,cv1) => {
+       acc1.push(cv1(cv))
+       return acc1
+     },[])
+     acc[cv] = call;
+     return acc;
+    },{})
+  }
+  // TEST
+  console.log(
+    multiMap(
+      ['catfood', 'glue', 'beer'],
+      [
+        function (str) {
+          return str.toUpperCase();
+        },
+        function (str) {
+          return (
+            str[0].toUpperCase() + str.slice(1).toLowerCase()
+          );
+        },
+        function (str) {
+          return str + str;
+        },
+      ]
+    )
+  ); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
 ```
 
 3. Construct a function `objOfMatchesWithArray` that accepts three arrays. First two array will be an array of same length. Third array is a collection function in an array. `objOfMatchesWithArray` will build an object and return it. Loot at the example below to understand better
@@ -50,8 +65,15 @@ To build the object, `objOfMatchesWithArray` will test each element of the first
 The final output from the third array will be matched agains the same indexed element of second array. If there is a match, the element from the first array becomes a key in an object, and the element from the second array becomes the corresponding value.
 
 ```js
-function objOfMatchesWithArray(array1, array2, callback) {}
-
+function objOfMatchesWithArray(array1, array2, callback) {
+  return array1.reduce((acc,cv,index) => {
+    let back = callback.forEach((elm) => {
+      if()
+    });
+    acc[cv] = back;
+    return acc;
+  },{})
+}
 // TEST
 console.log(
   objOfMatchesWithArray(
@@ -123,7 +145,9 @@ Create a function named `schedule` which accept two arguments an array of functi
 The function `schedule` will execute the function at first index after the value in value on first index in second array. i.e execute `sayHi` after `1` second and `sayHello` after `2` second.
 
 ```js
-function schedule() {}
+function schedule(array,ms){
+  
+}
 
 function sayHi() {
   console.log('Hi');

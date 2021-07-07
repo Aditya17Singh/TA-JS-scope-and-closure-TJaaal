@@ -67,10 +67,10 @@ The final output from the third array will be matched agains the same indexed el
 ```js
 function objOfMatchesWithArray(array1, array2, callback) {
   return array1.reduce((acc,cv,index) => {
-    let back = callback.forEach((elm) => {
-      if()
-    });
-    acc[cv] = back;
+    let val = callback.reduce((acc,fn) => fn(acc),cv);
+    if(val === array2[index]){
+      acc[cv] = array2[index]
+    }
     return acc;
   },{})
 }
@@ -103,7 +103,13 @@ To build the object, `objectWithArrayValues` will pass each value of the first a
 In the final object the key will be the value form the first array like `hi` and value will be an array of values returned from each function like `['HI', 'Hi', 'HiHi']`
 
 ```js
-function objOfMatchesWithArray(array1, array2, callback) {}
+function objOfMatchesWithArray(array1, array2, callback) {
+  return array1.reduce((acc,cv) => {
+    let map = array2.map((elm) => elm(cv))
+    acc[cv] = map
+    return acc
+  },{})
+}
 
 // TEST
 console.log(
@@ -146,7 +152,13 @@ The function `schedule` will execute the function at first index after the value
 
 ```js
 function schedule(array,ms){
-  
+  if(array.length !== ms.length){
+    alert("Length is not the same!")
+    return;
+  }
+  array.forEach((fn,i) => {
+    setTimeout(fn,ms[i] * 1000)
+  })
 }
 
 function sayHi() {

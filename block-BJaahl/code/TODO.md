@@ -2,7 +2,13 @@
 
 ```js
 function once(cb) {
-  // your code goes here
+  let callcount = 0
+  if(callcount > 1){
+    alert("call me once")
+  }else{
+    callcount += 1;
+    cb()
+  }
 }
 
 // TEST
@@ -11,14 +17,16 @@ function sayHello() {
 }
 let log = once(sayHello);
 log(); // alert message "You can only call me once!"
-log(); // return undefinde (can't be called twice)
+log(); // return undefinded (can't be called twice)
 ```
 
 2. Change the above function in such a way that the function accepts two parameter a callback function and parameter for the callback function. When calling the function pass the parameters.
 
 ```js
-function once(cb) {
-  // your code goes here
+function once(cb,str) {
+  return function(){
+    cb(str)
+  }
 }
 
 // TEST
@@ -35,7 +43,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest
 
 ```js
 function once(cb) {
-  // your code goes here
+  
 }
 
 // TEST
